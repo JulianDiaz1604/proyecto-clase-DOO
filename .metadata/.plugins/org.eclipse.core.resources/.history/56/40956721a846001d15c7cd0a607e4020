@@ -1,0 +1,14 @@
+package edu.uco.budget.domain;
+
+import java.util.UUID;
+
+public class PersonDTO {
+	
+	private UUID id;
+	private String idCard;
+	private String firstName;
+	private String secundName;
+	private String firstSurname;
+	private String seconSurname;
+
+}

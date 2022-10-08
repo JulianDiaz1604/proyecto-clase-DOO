@@ -1,0 +1,11 @@
+package edu.uco.budget.crosscutting.helper;
+
+import java.util.UUID;
+
+public final class UUIDHelper {
+	
+	private UUIDHelper() {
+		super();
+	}
+
+}

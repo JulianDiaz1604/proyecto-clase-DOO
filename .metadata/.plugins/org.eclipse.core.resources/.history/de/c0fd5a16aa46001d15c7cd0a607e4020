@@ -1,0 +1,83 @@
+package edu.uco.budget.domain;
+
+import java.util.UUID;
+
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
+
+public class PersonDTO {
+	
+	private UUID id;
+	private String idCard;
+	private String firstName;
+	private String secondName;
+	private String firstSurname;
+	private String seconSurname;
+	
+	public PersonDTO() {
+		super();
+	}
+	
+	public PersonDTO(final UUID id, final String idCard, final String firstName, final String secondName, final String firstSurname, final String seconSurname) {
+		this.id = id;
+		this.idCard = idCard;
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.firstSurname = firstSurname;
+		this.seconSurname = seconSurname;
+	}
+	
+	public static final PersonDTO create(final UUID id, final String idCard, final String firstName, final String secondName, final String firstSurname, final String seconSurname) {
+		return new PersonDTO(id, idCard, firstName, secondName, firstName, firstSurname);
+	}
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = getDefaultUUID(id);
+	}
+
+	public String getIdCard() {
+		return idCard;
+	}
+
+	public void setIdCard(String idCard) {
+		this.idCard = idCard;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getSecundName() {
+		return secondName;
+	}
+
+	public void setSecundName(String secundName) {
+		this.secondName = secundName;
+	}
+
+	public String getFirstSurname() {
+		return firstSurname;
+	}
+
+	public void setFirstSurname(String firstSurname) {
+		this.firstSurname = firstSurname;
+	}
+
+	public String getSeconSurname() {
+		return seconSurname;
+	}
+
+	public void setSeconSurname(String seconSurname) {
+		this.seconSurname = seconSurname;
+	}
+	
+	
+
+}

@@ -1,0 +1,5 @@
+package edu.uco.budget.helper;
+
+public class UUIDHelper {
+
+}
