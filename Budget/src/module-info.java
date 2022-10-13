@@ -5,5 +5,5 @@
  * @author diazj
  *
  */
-module Budget_Data {
+module Budget {
 }

@@ -956,3 +956,5 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact edu.uco.budge
 2022-10-07 20:39:47,447 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\diazj\eclipse-workspace\Budget_Domain\src\test\resources
 2022-10-07 20:40:07,371 [Worker-70: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-10-07 20:40:07,373 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\diazj\eclipse-workspace\Budget_Domain\src\main\resources
+2022-10-07 20:40:07,375 [Worker-70: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-10-07 20:40:07,376 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\diazj\eclipse-workspace\Budget_Domain\src\test\resources

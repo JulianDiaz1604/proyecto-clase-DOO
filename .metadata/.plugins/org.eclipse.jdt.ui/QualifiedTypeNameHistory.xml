@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Short"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.UUIDHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.ObjectHelper"/>
+    <fullyQualifiedTypeName name="java.lang.Number"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.NumberHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.domain.builder.YearDTOBuilder"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.domain.YearDTO"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.util.UUID"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.domain.builder.PersonDTOBuilder"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.domain.PersonDTO"/>
+</qualifiedTypeNameHistroy>
