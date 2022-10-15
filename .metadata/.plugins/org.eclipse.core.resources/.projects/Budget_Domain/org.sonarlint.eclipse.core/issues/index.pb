@@ -11,5 +11,3 @@ e
 5src/edu/uco/budget/domain/builder/YearDTOBuilder.java,a\7\a7a986f1715aae84bc348b3a036a537141968647
 g
 7src/edu/uco/budget/domain/builder/PersonDTOBuilder.java,5\2\5233ea9cb37193894210374a025fe38a5157ba51
-U
-%src/edu/uco/budget/domain/Budget.java,b\b\bb0632a4b4cfda37cb76bbc9fe26e59cd6d30d8b
