@@ -1,6 +1,8 @@
 package edu.uco.budget.data.daofactory;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
@@ -18,32 +20,53 @@ class SqlServerDAOFactory extends DAOFactory{
     }
 
     @Override
+    protected void openConnection() {
+        final String url = "jdbc:sqlserver://rg-wf.database.windows.net:1433;" 
+                + "database=db-budget;" 
+                + "user=userDmlBudget;" 
+                + "password=us3rDmlBudg3t;"
+                + "encrypt=true;"
+                + "trustServerCertificate=false;"
+                + "hostNameInCertificate=*.database.windows.net;"
+                + "loginTimeout=30;";
+                try {
+                    connection = DriverManager.getConnection(url);
+                } catch (SQLException e) {
+                    throw new RuntimeException("Error al conectarse a la base de datos.");
+                }
+    }
+    
+    @Override
     public void closeConection() {
-        // TODO Auto-generated method stub
-        
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void confirmTransaction() {
-        // TODO Auto-generated method stub
-        
+        try {
+            connection.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public BudgetDAO getBudgetDAO() {
-        // TODO Auto-generated method stub
         return new BudgetSqlServerDAO(connection);
     }
 
     @Override
     public PersonDAO getPersonDAO() {
-        // TODO Auto-generated method stub
         return new PersonSqlServerDAO(connection);
     }
 
     @Override
     public YearDAO getYearDAO() {
-        // TODO Auto-generated method stub
         return new YearSqlServerDAO(connection);
     }
 
@@ -52,13 +75,6 @@ class SqlServerDAOFactory extends DAOFactory{
         // TODO Auto-generated method stub
         
     }
-
-    @Override
-    protected void openConnection() {
-        // TODO Auto-generated method stub
-        
-    }
-    
 
 
 }

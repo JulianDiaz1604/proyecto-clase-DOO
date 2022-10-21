@@ -7,7 +7,7 @@ public final class SqlConnectionHelper {
     
     private SqlConnectionHelper(){
         super();
-    }
+    } 
 
     public static final boolean connectionIsNull(final Connection connection) {
         return ObjectHelper.isNull(connection);
