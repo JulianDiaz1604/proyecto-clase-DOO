@@ -5,6 +5,9 @@ import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull; 
 
 public final class UUIDHelper {
 	
+	private static final String DEFAULT_UUID_AS_STRING = "null";
+	private static final UUID DEFAULT_UUID = UUID.fromString(DEFAULT_UUID_AS_STRING);
+
 	private UUIDHelper() {
 		super();
 	}
@@ -14,7 +17,22 @@ public final class UUIDHelper {
 	}
 	
 	public static final UUID getNewUUID() {
+
+		UUID uuid;
+
+		do {
+			uuid = UUID.randomUUID();
+		} while (isDefaultUUID(uuid));
+
 		return UUID.randomUUID();
+	}
+
+	public static final String getUUIDAsString(final UUID value){
+		return getDefaultUUID(value).toString();
+	}
+
+	public static final boolean isDefaultUUID(final UUID value){
+		return DEFAULT_UUID.equals(value);
 	}
 
 }

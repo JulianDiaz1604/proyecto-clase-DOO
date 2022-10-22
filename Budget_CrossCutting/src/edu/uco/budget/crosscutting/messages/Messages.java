@@ -26,6 +26,11 @@ public class Messages {
 
         public static final String TECHNICAL_CONNECTION_IS_NULL = "Connection is null";
         public static final String TECHNICAL_CONNECTION_IS_CLOSED = "Connection is closed";
+        public static final String TECHNICAL_CONNECTION_ALREADY_IS_CLOSED = "Connection already is closed";
+        public static final String TECHNICAL_PROBLEM_CLOSING_CONNECTION = "There was a problem trying to close connection";
+        public static final String TECHNICAL_CONNECTION_IS_CLOSED_FOR_INIT_TRANSACTION = "Connection is closed to init transaction";
+        public static final String TECHNICAL_PROBLEM_TRY_INIT_TRANSACTION = "There was a problem trying to init transaction";
+        public static final String TECHNICAL_PROBLEM_TRY_COMMIT_TRANSACTION = "There was a problem trying to close connection";
 
     }
 

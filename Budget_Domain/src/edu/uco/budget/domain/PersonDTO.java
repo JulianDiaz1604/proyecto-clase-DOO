@@ -3,6 +3,7 @@ package edu.uco.budget.domain;
 import java.util.UUID;
 
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;;;
 
 public class PersonDTO {
 	
@@ -77,7 +78,9 @@ public class PersonDTO {
 	public void setSecondSurname(String seconSurname) {
 		this.secodSurname = seconSurname;
 	}
-	
-	
+
+    public final String getIdAsString() {
+        return getUUIDAsString(getId());
+    }
 
 }

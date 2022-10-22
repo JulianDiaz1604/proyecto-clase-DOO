@@ -21,4 +21,40 @@ public final class SqlConnectionHelper {
         }
     }
 
+    public static final void closeConnection(final Connection connection){
+        try {
+            if(!connectionIsOpen(connection)){
+                throw new RuntimeException();
+            }
+            connection.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public static final void openConnection(final Connection connection){
+        try {
+            if(!connectionIsOpen(connection)){
+                throw new RuntimeException();
+            }
+            connection.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public static final void initTransaction(final Connection connection){
+        try {
+            if(!connectionIsOpen(connection)){
+                throw new RuntimeException();
+            }
+            connection.close();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 }
