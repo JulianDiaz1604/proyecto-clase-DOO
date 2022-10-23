@@ -43,7 +43,7 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
     @Override
     public final List<BudgetDTO> find(final BudgetDTO budget) {
 
-        var results = new ArrayList<>()
+        var results = new ArrayList<>();
         var setWhere = true;
         var parameters = new ArrayList<Object>();
         final var sqlBuilder = new StringBuilder();
@@ -94,6 +94,7 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
         } catch (Exception e) {
             // TODO: handle exception
         }
+        return null;
     }
 
     @Override
