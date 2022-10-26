@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="java.lang.Short"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.UUIDHelper"/>
-    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.ObjectHelper"/>
     <fullyQualifiedTypeName name="java.lang.Number"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.NumberHelper"/>
     <fullyQualifiedTypeName name="edu.uco.budget.domain.builder.YearDTOBuilder"/>
@@ -11,4 +10,11 @@
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="edu.uco.budget.domain.builder.PersonDTOBuilder"/>
     <fullyQualifiedTypeName name="edu.uco.budget.domain.PersonDTO"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="java.lang.Throwable"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.ObjectHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.enumeration.LayerException"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.BudgetCustomException"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>
