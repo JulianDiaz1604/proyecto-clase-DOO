@@ -45,20 +45,19 @@ class SqlServerDAOFactory extends DAOFactory{
     @Override
     public void closeConection() {
         try {
-            connection.close();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            edu.uco.budget.crosscutting.helper.SqlConnectionHelper.closeConnection(connection);
+        } catch (CrosscuttingCustomException exception) {
+            throw DataCustomException.CreateTechnicalException(Messages.SqlConnectionHelper.TECHNICAL_PROBLEM_CLOSE_CONNECTION, exception);
         }
     }
 
     @Override
     public void confirmTransaction() {
         try {
-            connection.commit();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    edu.uco.budget.crosscutting.helper.SqlConnectionHelper.commitTrasaction(connection);
+    }catch(CrosscuttingCustomException exception) {
+        throw DataCustomException.CreateTechnicalException(Messages.SqlConnectionHelper.TECHNICAL_PROBLEM_CONFIRM_TRANSACTION, exception);
+    }
     }
 
     @Override
@@ -81,10 +80,17 @@ class SqlServerDAOFactory extends DAOFactory{
         try {
             edu.uco.budget.crosscutting.helper.SqlConnectionHelper.initTrasaction(connection);
         }catch(CrosscuttingCustomException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception);
+            throw DataCustomException.CreateTechnicalException(Messages.SqlConnectionHelper.TECHNICAL_PROBLEM_INIT_TRANSACTION, exception);
         }
         
     }
+
+    @Override
+    public void cancelTransaction() {
+        edu.uco.budget.crosscutting.helper.SqlConnectionHelper.rollbackTrasaction(connection);
+    }
+    
+    
 
 
 }

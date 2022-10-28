@@ -16,11 +16,13 @@
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.BudgetCustomException"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.enumeration.LayerException"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages.DAOFactory"/>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
-    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException"/>
-    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.data.DataCustomException"/>
     <fullyQualifiedTypeName name="edu.uco.budget.data.daofactory.SqlServerDAOFactory"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.ls.LSOutput"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.SqlConnectionHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.data.DataCustomException"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages.SqlConnectionHelper"/>
 </qualifiedTypeNameHistroy>

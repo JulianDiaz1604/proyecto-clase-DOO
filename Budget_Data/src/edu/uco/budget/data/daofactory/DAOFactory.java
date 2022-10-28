@@ -42,6 +42,8 @@ public abstract class DAOFactory {
     public abstract void confirmTransaction();
 
     public abstract void closeConection();
+    
+    public abstract void cancelTransaction();
 
     public abstract BudgetDAO getBudgetDAO();
 
