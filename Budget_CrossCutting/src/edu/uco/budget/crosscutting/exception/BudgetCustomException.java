@@ -10,7 +10,7 @@ public class BudgetCustomException extends RuntimeException {
     
             
     protected BudgetCustomException(final String userMessage, final LayerException layer, final String technicalMessage, final Throwable rootException) {
-        super(applyTrim(technicalMessage), getDefaultIfNull(rootException, new Exception()));
+        super(technicalMessage, getDefaultIfNull(rootException, new Exception()));
         setUserMessage(userMessage);
         setLayer(layer);
     }
@@ -22,7 +22,7 @@ public class BudgetCustomException extends RuntimeException {
 
 
     public void setUserMessage(final String userMessage) {
-        this.userMessage = applyTrim(userMessage);
+        this.userMessage = (userMessage);
     }
 
 

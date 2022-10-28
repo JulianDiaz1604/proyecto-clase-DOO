@@ -4,6 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.w3c.dom.ls.LSOutput;
+
+import edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException;
+import edu.uco.budget.crosscutting.exception.data.DataCustomException;
+import edu.uco.budget.crosscutting.messages.Messages;
+import edu.uco.budget.crosscutting.messages.Messages.SqlConnectionHelper;
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
@@ -72,7 +78,11 @@ class SqlServerDAOFactory extends DAOFactory{
 
     @Override
     public void initTransaction() {
-        // TODO Auto-generated method stub
+        try {
+            edu.uco.budget.crosscutting.helper.SqlConnectionHelper.initTrasaction(connection);
+        }catch(CrosscuttingCustomException exception) {
+            throw DataCustomException.CreateTechnicalException(null, exception);
+        }
         
     }
 
