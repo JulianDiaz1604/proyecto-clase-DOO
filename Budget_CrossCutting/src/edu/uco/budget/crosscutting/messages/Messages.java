@@ -40,4 +40,12 @@ public class Messages {
 
     }
 
+    public static class UUIDHelper {
+        private UUIDHelper(){
+            super();
+        }
+
+        public static final String TECHNICAL_UUID_FROM_STRING_INVALID = "The UUID to convert doesn't have a correct format";
+        public static final String TECHNICAL_UUID_FROM_STRING_UNEXPECTED_ERROR = "There was an unexpected error";
+    }
 }
