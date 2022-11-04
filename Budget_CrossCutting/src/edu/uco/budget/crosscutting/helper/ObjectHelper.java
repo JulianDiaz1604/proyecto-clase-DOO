@@ -11,7 +11,7 @@ public class ObjectHelper {
 	}
 	
 	public static final<T> T getDefaultIfNull(T value, T defaultValue) {
-		return (isNull(value))?defaultValue : value;
+		return (isNull(value))? defaultValue : value;
 	}
 
 }

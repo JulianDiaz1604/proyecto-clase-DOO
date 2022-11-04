@@ -9,10 +9,8 @@
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="edu.uco.budget.domain.builder.PersonDTOBuilder"/>
-    <fullyQualifiedTypeName name="edu.uco.budget.domain.PersonDTO"/>
     <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
     <fullyQualifiedTypeName name="java.lang.Throwable"/>
-    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.ObjectHelper"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.BudgetCustomException"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.enumeration.LayerException"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages.DAOFactory"/>
@@ -23,6 +21,11 @@
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.SqlConnectionHelper"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.exception.data.DataCustomException"/>
-    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages"/>
     <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages.SqlConnectionHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.messages.Messages.BudgetSqlServerDAO"/>
+    <fullyQualifiedTypeName name="java.time.Year"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.StringHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.crosscutting.helper.ObjectHelper"/>
+    <fullyQualifiedTypeName name="edu.uco.budget.domain.PersonDTO"/>
 </qualifiedTypeNameHistroy>

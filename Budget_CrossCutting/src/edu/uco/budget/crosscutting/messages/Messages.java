@@ -43,9 +43,44 @@ public class Messages {
     public static class UUIDHelper {
         private UUIDHelper(){
             super();
-        }
+        }   
 
         public static final String TECHNICAL_UUID_FROM_STRING_INVALID = "The UUID to convert doesn't have a correct format";
         public static final String TECHNICAL_UUID_FROM_STRING_UNEXPECTED_ERROR = "There was an unexpected error";
     }
+    public static class BudgetSqlServerDAO{
+        private BudgetSqlServerDAO(){
+            super();
+        }
+        public static final String TECHNICAL_PROBLEM_CREATE_BUDGET = "There was a problem trying to create the Budget";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET = "There was an unexpected problem trying to create the Budget";
+        public static final String TECHNICAL_PROBLEM_FIND_BUDGET = "There was a problem to trying to find budget";
+        public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_BUDGET = "There was a problem trying to set parameters";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETERS = "There was a unexpected problem to trying set parameters";
+        public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY_BUDGET = "There was a problem trying to excute query in the Budget";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY_BUDGET = "There was a unexpected problem trying to excute query in the Budget";
+        public static final String TECHNICAL_PROBLEM_UPDATE_BUDGET = "There was a problem to trying to update the Budget";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was a problem to trying to update the Budget";
+        public static final String TECHNICAL_PROBLEM_DELETE_BUDGET = "There was a problem to trying to delete the Budget";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET = "There was a unexpected problem to trying to delete the Budget";
+        public static final String TECHNICAL_PROBLEM_FILL_RESULTS_BUDGET= "There was a problem to trying to fill results in the Budget";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_BUDGET = "There was a unexpected problem to trying to fill results in the Budget";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_BUDGETDTO = "There was a unexpected problem to trying to fill BudgetDTO in the Budget";
+        public static final String TECHNICAL_PROBLEM_FILL_BUDGETDTO = "There was a problem to trying to fill BudgetDTO in the Budget";
+        public static final String TECHNICAL_PROBLEM_FILL_YEARDTO = "There was a problem to trying to fill YearDTO in the Budget";
+        public static final String TECHNICAL_PROBLEM_FILL_PERSONDTO = "There was a problem to trying to fill PersonDTO in the Budget";
+
+    }
+    
+    public static class YearSqlServerDAO{
+        private YearSqlServerDAO() {
+        }
+        
+    }
+    public static class PersonSqlServerDAO{
+        private PersonSqlServerDAO() {
+        }
+        
+    }
 }
+

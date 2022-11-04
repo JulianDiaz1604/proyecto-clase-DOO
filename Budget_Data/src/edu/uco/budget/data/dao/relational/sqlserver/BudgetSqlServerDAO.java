@@ -1,4 +1,4 @@
-package edu.uco.budget.data.dao.relational.sqlserver;
+    package edu.uco.budget.data.dao.relational.sqlserver;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,9 +40,9 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
             preparedStatement.executeUpdate();
 
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_CREATE_BUDGET, exception); //TODO 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET, exception); //TODO 
         }
     }
 
@@ -68,7 +68,7 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
             return executeQuery(preparedStatement);
 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception);
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_FIND_BUDGET, exception);
         }
 
     }
@@ -80,9 +80,9 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
                 preparedStatement.setObject(index + 1, parameters.get(index));
             }
         } catch(final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_BUDGET, exception);
         } catch(final Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET, exception); 
         }
     }
 
@@ -134,7 +134,7 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
     private final void createOrderBy(final StringBuilder sqlBuilder){
 
         sqlBuilder.append("ORDER BY "); 
-        sqlBuilder.append("ON     Bu.idYear = Ye.id "); //TODO: Completar query
+        sqlBuilder.append("ON     Bu.idYear = Ye.id "); //TODO: Completar query-----------------------------------------AAAAAAAAAAAAAAAA
 
     }
 
@@ -143,11 +143,11 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
         try (final var resultSet = preparedStatement.executeQuery()) {
             return fillResults(resultSet);
         } catch(final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY_BUDGET, exception); //TODO
         } catch(final DataCustomException exception) {
             throw exception;
         } catch(final Exception exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY_BUDGET, exception); //TOon
         }
     }
 
@@ -164,9 +164,9 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
             preparedStatement.executeUpdate();
 
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_UPDATE_BUDGET, exception); //TODO
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET, exception); //TODO
         }
     }
 
@@ -181,9 +181,9 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
             preparedStatement.executeUpdate();
 
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_DELETE_BUDGET, exception); //TODO
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET, exception); //TODO
         }
     }
 
@@ -202,9 +202,9 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
             return results;
 
         } catch (final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_FILL_RESULTS_BUDGET, exception); //TODO
         } catch (final Exception exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_BUDGET, exception); //TODO
         }
 
     }
@@ -216,11 +216,11 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
         return BudgetDTO.create(resultSet.getString("idBudget"), fillYearDTO(resultSet), fillPersonDTO(resultSet));
 
         } catch(final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_FILL_BUDGETDTO, exception); //TODO
         } catch(final DataCustomException exception) {
             throw exception;
         } catch(final Exception exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_BUDGETDTO, exception); //TODO
         }
 
     }
@@ -232,7 +232,7 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
             return YearDTO.create(resultSet.getString("IdYear"), resultSet.getShort("NumberYear"));
             
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_FILL_YEARDTO, exception); //TODO
         }
 
     }
@@ -249,7 +249,7 @@ public class BudgetSqlServerDAO extends DAORelational implements BudgetDAO{
                                     resultSet.getString("SecondSurnamePerson"));
             
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_FILL_PERSONDTO, exception); //TODO
         }
 
     }
