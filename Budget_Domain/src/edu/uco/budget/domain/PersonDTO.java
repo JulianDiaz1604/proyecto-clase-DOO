@@ -2,9 +2,11 @@ package edu.uco.budget.domain;
 
 import java.util.UUID;
 
+import edu.uco.budget.crosscutting.helper.UUIDHelper;
+
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
-import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDFromString;;
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public class PersonDTO {
 	
@@ -30,6 +32,10 @@ public class PersonDTO {
 	
 	public static final PersonDTO create(final UUID id, final String idCard, final String firstName, final String secondName, final String firstSurname, final String secondSurname) {
 		return new PersonDTO(id, idCard, firstName, secondName, firstName, secondSurname);
+	}
+	
+	public static final PersonDTO create(final UUID id) {
+		return new PersonDTO(id, StringHelper.EMPTY, StringHelper.EMPTY, StringHelper.EMPTY, StringHelper.EMPTY, StringHelper.EMPTY);
 	}
 	
 	public static final PersonDTO create(final String id, final String idCard, final String firstName, final String secondName, final String firstSurname, final String secondSurname) {
@@ -87,5 +93,13 @@ public class PersonDTO {
     public final String getIdAsString() {
         return getUUIDAsString(getId());
     }
+
+	public boolean exist() {
+		return !UUIDHelper.isDefaultUUID(id);
+	}
+
+	public boolean notExist() {
+		return !exist();
+	}
 
 }

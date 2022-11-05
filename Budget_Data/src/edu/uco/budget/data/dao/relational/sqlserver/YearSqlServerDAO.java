@@ -33,7 +33,7 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
         try (final var preparedStatement = getConnection().prepareStatement(sql)) {
             
             preparedStatement.setString(1, year.getIdAsString());
-            preparedStatement.setString(2, year.getYearNumber().toString );//no entiendo este error
+            preparedStatement.setString(2, year.getYearNumber().toString());//no entiendo este error
 
             preparedStatement.executeUpdate();
 
