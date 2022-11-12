@@ -76,7 +76,25 @@ public class Messages {
         private YearSqlServerDAO() {
             super ();
         }
+        public static final String TECHNICAL_PROBLEM_CREATE_YEAR = "There was a problem trying to create the Year";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_YEAR = "There was an unexpected problem trying to create the Year";
+        public static final String TECHNICAL_PROBLEM_UPDATE_YEAR = "There was a problem to trying to update the Year";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_YEAR = "There was a problem to trying to update the Year";
+        public static final String TECHNICAL_PROBLEM_DELETE_YEAR = "There was a problem to trying to delete the Year";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_YEAR = "There was a unexpected problem to trying to delete the Year";
         
+        public static final String TECHNICAL_PROBLEM_FILL_RESULTS_YEAR = "There was a problem to trying to fill results in the Year";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_YEAR = "There was a unexpected problem to trying to fill results in the Year";
+        
+        public static final String TECHNICAL_PROBLEM_FILL_YEARDTO_YEAR = "There was a problem to trying to fill PersonDTO in the Year";
+        
+        public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY_YEAR= "There was a problem trying to excute query in the Year";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY_YEAR= "There was a unexpected problem trying to excute query in the Year";
+        
+        public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_YEAR= "There was a problem trying to set parameters in the Year";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETERS_YEAR= "There was a unexpected problem to trying set parameters in the Year";
+       
+        public static final String TECHNICAL_PROBLEM_PREPAREANDEXECUTEQUERY_YEAR= "There was a problem trying to prepareAndExecuteQuery the Year";
     }
     public static class PersonSqlServerDAO{
         private PersonSqlServerDAO() {

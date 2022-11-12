@@ -15,6 +15,7 @@ import java.util.UUID;
 import edu.uco.budget.crosscutting.exception.data.DataCustomException;
 import edu.uco.budget.crosscutting.helper.ObjectHelper;
 import edu.uco.budget.crosscutting.helper.UUIDHelper;
+import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.dao.YearDAO;
 import edu.uco.budget.data.dao.relational.DAORelational;
 import edu.uco.budget.domain.BudgetDTO;
@@ -33,15 +34,15 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
         try (final var preparedStatement = getConnection().prepareStatement(sql)) {
             
             preparedStatement.setString(1, year.getIdAsString());
-            preparedStatement.setString(2, year.getYearNumber().toString());//no entiendo este error
+            preparedStatement.setString(2, year.getYearNumber().toString()); //no entiendo este error
 
             preparedStatement.executeUpdate();
 
             
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_CREATE_YEAR, exception); 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_YEAR, exception); 
         }
     }
 
@@ -67,7 +68,7 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
             return executeQuery(preparedStatement);
 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception);
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_PREPAREANDEXECUTEQUERY_YEAR, exception);
         }
 
     }
@@ -79,9 +80,9 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
                 preparedStatement.setObject(index + 1, parameters.get(index));
             }
         } catch(final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_YEAR, exception); 
         } catch(final Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETERS_YEAR, exception); 
         }
     }
 
@@ -122,11 +123,11 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
         try (final var resultSet = preparedStatement.executeQuery()) {
             return fillResults(resultSet);
         } catch(final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY_YEAR, exception); 
         } catch(final DataCustomException exception) {
             throw exception;
         } catch(final Exception exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY_YEAR, exception); 
         }
     }
 
@@ -137,14 +138,14 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
         try (final var preparedStatement = getConnection().prepareStatement(sql)) {
             
             preparedStatement.setString(1, year.getIdAsString());
-            preparedStatement.setString(2, year.getYearNumber().);//ERROR DELSTRING
+            preparedStatement.setString(2, year.getYearNumber()); //ERROR DELSTRING
 
             preparedStatement.executeUpdate();
 
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_UPDATE_YEAR, exception); 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_YEAR, exception); 
         }
     }
 
@@ -159,9 +160,9 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
             preparedStatement.executeUpdate();
 
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_DELETE_YEAR, exception); 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_YEAR, exception); 
         }
     }
 
@@ -180,9 +181,9 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
             return results;
 
         } catch (final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_FILL_RESULTS_YEAR, exception); 
         } catch (final Exception exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_YEAR, exception); 
         }
 
     }
@@ -195,11 +196,10 @@ public class YearSqlServerDAO extends DAORelational implements YearDAO{
             return YearDTO.create(resultSet.getString("IdYear"), resultSet.getShort("NumberYear"));
             
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_FILL_YEARDTO_YEAR, exception); 
         }
 
     }
 
    
-
 }
