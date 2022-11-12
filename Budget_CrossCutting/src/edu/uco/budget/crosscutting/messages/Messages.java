@@ -74,13 +74,33 @@ public class Messages {
     
     public static class YearSqlServerDAO{
         private YearSqlServerDAO() {
+            super ();
         }
         
     }
     public static class PersonSqlServerDAO{
         private PersonSqlServerDAO() {
+            super();
         }
+        public static final String TECHNICAL_PROBLEM_CREATE_PERSON = "There was a problem trying to create the Person";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PERSON = "There was an unexpected problem trying to create the Person";
+        public static final String TECHNICAL_PROBLEM_UPDATE_PERSON = "There was a problem to trying to update the Person";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_PERSON = "There was a problem to trying to update the Person";
+        public static final String TECHNICAL_PROBLEM_DELETE_PERSON = "There was a problem to trying to delete the Person";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_PERSON = "There was a unexpected problem to trying to delete the Person";
         
+        public static final String TECHNICAL_PROBLEM_PREPAREANDEXECUTEQUERY_PERSON = "There was a problem trying to prepareAndExecuteQuery the Person";
+    
+        public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_PERSON = "There was a problem trying to set parameters";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETERS_PERSON = "There was a unexpected problem to trying set parameters";
+       
+        public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY_PERSON = "There was a problem trying to excute query in the Person";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY_PERSON = "There was a unexpected problem trying to excute query in the Person";
+        
+        public static final String TECHNICAL_PROBLEM_FILL_RESULTS_PERSON = "There was a problem to trying to fill results in the Person";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_PERSON = "There was a unexpected problem to trying to fill results in the Person";
+        
+        public static final String TECHNICAL_PROBLEM_FILL_PERSONDTO_PERSON = "There was a problem to trying to fill PersonDTO in the Person";
     }
 }
 

@@ -2,6 +2,7 @@ package edu.uco.budget.data.dao.relational.sqlserver;
 
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
+import java.security.MessageDigestSpi;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ import java.util.UUID;
 import edu.uco.budget.crosscutting.exception.data.DataCustomException;
 import edu.uco.budget.crosscutting.helper.ObjectHelper;
 import edu.uco.budget.crosscutting.helper.UUIDHelper;
+import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.relational.DAORelational;
 import edu.uco.budget.domain.BudgetDTO;
@@ -47,9 +49,9 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
             preparedStatement.executeUpdate();
 
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_PROBLEM_CREATE_PERSON, exception); 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PERSON, exception); 
         }
     }
 
@@ -75,7 +77,7 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
             return executeQuery(preparedStatement);
 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception);
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_PROBLEM_PREPAREANDEXECUTEQUERY_PERSON, exception);
         }
 
     }
@@ -87,9 +89,9 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
                 preparedStatement.setObject(index + 1, parameters.get(index));
             }
         } catch(final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_PERSON, exception); 
         } catch(final Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMETERS_PERSON, exception); //TODO crear excepcion
         }
     }
 
@@ -157,11 +159,11 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
         try (final var resultSet = preparedStatement.executeQuery()) {
             return fillResults(resultSet);
         } catch(final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY_PERSON, exception); 
         } catch(final DataCustomException exception) {
             throw exception;
         } catch(final Exception exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO crear excepcion
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY_PERSON, exception); 
         }
     }
 
@@ -181,9 +183,9 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
             preparedStatement.executeUpdate();
 
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_PROBLEM_UPDATE_PERSON, exception); 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_PERSON, exception); 
         }
     }
 
@@ -198,9 +200,9 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
             preparedStatement.executeUpdate();
 
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_PROBLEM_DELETE_PERSON, exception); 
         } catch (Exception exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_PERSON, exception); 
         }
     }
 
@@ -219,9 +221,9 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
             return results;
 
         } catch (final SQLException exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_PROBLEM_FILL_RESULTS_PERSON, exception); //TODO
         } catch (final Exception exception){
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_PERSON, exception); //TODO
         }
 
     }
@@ -240,7 +242,7 @@ public class PersonSqlServerDAO extends DAORelational implements PersonDAO{
                                     resultSet.getString("SecondSurnamePerson"));
             
         } catch (SQLException exception) {
-            throw DataCustomException.CreateTechnicalException(null, exception); //TODO
+            throw DataCustomException.CreateTechnicalException(Messages.PersonSqlServerDAO.TECHNICAL_PROBLEM_FILL_PERSONDTO_PERSON, exception); //TODO
         }
 
     }
